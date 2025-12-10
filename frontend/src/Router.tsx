@@ -72,10 +72,7 @@ const router = createBrowserRouter(
                 },
             ],
         },
-    ],
-    {
-        basename: '/forest-bar',
-    }
+    ]
 );
 
 export function Router() {
