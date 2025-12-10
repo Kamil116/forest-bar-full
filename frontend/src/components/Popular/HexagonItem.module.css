@@ -1,0 +1,71 @@
+.hexagonWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.hexagonWrapper:hover {
+    transform: scale(1.05);
+}
+
+.hexagonBottom {
+    margin-top: clamp(0px, 18vw, 350px);
+}
+
+.hexagonLabel {
+    word-break: break-word;
+    white-space: normal;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 0 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.03em;
+    transition: transform 0.3s ease;
+}
+
+.hexagonWrapper:hover .hexagonLabel {
+    transform: scale(1.05);
+}
+
+.hexagonBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: clamp(10px, 1.5vw, 20px);
+    margin: clamp(-10px, -1.5vw, -20px);
+    width: clamp(35px, 15.5vw, 600px);
+    height: clamp(50px, 15.5vw, 600px);
+    transition: transform 0.3s ease;
+}
+
+.hexagonWrapper:hover .hexagonBox {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hexagonWrapper:nth-child(odd) {
+        transform: translateX(-25%); /* shift left */
+    }
+
+    .hexagonWrapper:nth-child(even) {
+        transform: translateX(35%); /* shift right */
+    }
+
+    .hexagonWrapper {
+        transition: transform 0.3s ease; /* smooth shift if needed */
+    }
+
+    .hexagonBox {
+        width: clamp(50px, 35vw, 600px);
+        height: clamp(50px, min(35vw, 15vh), 600px); /* Use min of vw and vh to adapt to both dimensions */
+    }
+
+    .hexagonBottom {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,11 @@
+.advantageCard {
+    min-width: clamp(250px, 30vw, 400px);
+    max-width: 100%;
+}
+
+@media (max-width: 576px) {
+    .advantageCard {
+        min-width: 100%;
+    }
+}
+

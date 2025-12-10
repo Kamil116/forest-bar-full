@@ -1,0 +1,10 @@
+.textInput {
+  background-color: rgba(219, 166, 25, 1);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 32px;
+  
+  &::placeholder {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.58);
+  }
+}

@@ -1,0 +1,18 @@
+/* Shared Pagination Styles */
+
+.paginationControl {
+    color: white;
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+    border: 1px solid rgba(219, 166, 25, 0.3); /* Yellow border with opacity */
+}
+
+.paginationControl:hover:not([data-active]) {
+    background-color: rgba(52, 33, 41, 0.7); /* Slightly darker on hover */
+    border-color: rgba(219, 166, 25, 0.5);
+}
+
+.paginationControl[data-active] {
+    background-color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+    color: rgba(27, 16, 21, 1); /* theme.other.darkBackground */
+}
+

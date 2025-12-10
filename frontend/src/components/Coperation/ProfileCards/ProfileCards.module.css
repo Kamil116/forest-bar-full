@@ -1,0 +1,8 @@
+/* ProfileCards Styles */
+.scrollbar[data-orientation='horizontal'] .thumb {
+  background-color: rgba(219, 166, 25, 1);
+}
+
+.scrollbar[data-orientation='horizontal'] .thumb:hover {
+  background-color: rgba(247, 187, 26, 1);
+}

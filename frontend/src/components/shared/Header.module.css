@@ -1,0 +1,65 @@
+.header {
+    height: clamp(40px, 7vh, 500px);
+    /* min-height: clamp(40px, 5vh, 60px); */
+    /* max-height: clamp(40px, 5vh, 60px); */
+}
+
+.logo {
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.logoWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(60px, 15vw, 500px);
+    height: 0;
+}
+
+.logoDesktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -34%);
+    z-index: 20;
+    cursor: pointer;
+    height: clamp(60px, 20vh, 500px);
+    /* width: auto; */
+    width: clamp(60px, 25vw, 500px);
+    object-fit: contain;
+    pointer-events: auto;
+}
+
+.logoDesktop:hover {
+    opacity: 0.8;
+}
+
+.logoMobile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -34%);
+    z-index: 20;
+    cursor: pointer;
+    height: clamp(50px, 20vh, 400px) !important;
+    width: auto !important;
+    object-fit: contain;
+    pointer-events: auto;
+}
+
+/* CSS Variables for button font sizes */
+:root {
+    --nav-button-font-size: clamp(12px, 2vw, 28px);
+    --mobile-nav-button-font-size: clamp(16px, 2vw, 24px);
+}
+
+.navButton {
+    font-size: var(--nav-button-font-size);
+}
+
+.mobileNavButton {
+    font-size: var(--mobile-nav-button-font-size);
+}

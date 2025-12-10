@@ -1,0 +1,64 @@
+/* DataTable Styles */
+
+/* Search and Filter Section */
+.searchWrapper {
+    flex: 1;
+    max-width: 400px;
+}
+
+.searchInput {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+    color: white;
+    border-color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+.searchInput:focus {
+    border-color: rgba(247, 187, 26, 1); /* theme.other.customOrange */
+}
+
+.selectInput {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+    color: white;
+    border-color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+/* Table Styles */
+.tableHeader {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+    color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 16px;
+    border-bottom: 1px solid rgba(219, 216, 15, 0.452); /* Yellow border with opacity */
+}
+
+.tableCell {
+    color: white;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(219, 216, 15, 0.452); /* Subtle white border */
+}
+
+.tableRow:hover {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+}
+
+.actionsColumn {
+    width: 120px;
+}
+
+/* Pagination Styles - imported from shared styles */
+
+/* Title and Badge */
+.tableTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Empty state */
+.emptyState {
+    text-align: center;
+    padding: var(--mantine-spacing-xl) 0;
+}
+

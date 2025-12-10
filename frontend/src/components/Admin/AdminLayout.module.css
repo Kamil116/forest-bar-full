@@ -1,0 +1,72 @@
+/* AppShell Layout Styles */
+.main,
+.main *,
+.navbar,
+.navbar *,
+.header,
+.header * {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.main {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: rgba(27, 16, 21, 1); /* theme.other.darkBackground */
+    border-right: 2px solid rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+.header {
+    background-color: rgba(27, 16, 21, 1); /* theme.other.darkBackground */
+    border-bottom: 2px solid rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+/* Header Title */
+.title {
+    color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+/* Header Link */
+.headerLink {
+    color: var(--mantine-color-white);
+    font-size: 16px;
+}
+
+.headerLink:hover {
+    background-color: var(--mantine-color-black);
+}
+
+/* Sidebar Navigation Links */
+.navLink {
+    border-radius: var(--mantine-radius-md);
+    color: var(--mantine-color-white);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navLink:hover {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+}
+
+.navLink[data-active] {
+    background-color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+    color: rgba(27, 16, 21, 1); /* theme.other.darkBackground */
+}
+
+.navLink[data-active]:hover {
+    background-color: rgba(219, 166, 25, 1); /* theme.other.customYellow */
+}
+
+/* Logout Link */
+.logoutLink {
+    border-radius: var(--mantine-radius-md);
+    color: var(--mantine-color-red-5);
+    font-weight: 500;
+}
+
+.logoutLink:hover {
+    background-color: rgba(52, 33, 41, 1); /* theme.other.cardBackground */
+}
+

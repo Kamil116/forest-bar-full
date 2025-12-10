@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Популярно</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, #f2b830 0%, #d49a1c 55%, #8c5a15 100%);
+      min-height: 100vh; padding: 48px 16px; color: #fff;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+
+    /* Заголовок */
+    .title { text-align: center; letter-spacing: 3px; font-size: 40px; margin-bottom: 36px; }
+
+    /* Соты */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; place-items: center; }
+    .hex { width: 260px; height: 260px; perspective: 1000px; }
+    .card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform .6s; cursor: pointer; }
+    .hex:hover .card { transform: rotateY(180deg); }
+
+    .face {
+      position: absolute; inset: 0; backface-visibility: hidden;
+      clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+      overflow: hidden; border: 6px solid rgba(44,24,16,.4); box-shadow: 0 10px 20px rgba(0,0,0,.25);
+    }
+    .front { background: #F5A623; }
+    .front img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .front .label { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); color: #fff; font-weight: 800; font-size: 18px; letter-spacing: 2px; text-shadow: 0 2px 6px rgba(0,0,0,.6); }
+
+    .back { background: #2C1810; transform: rotateY(180deg); display: grid; place-items: center; padding: 28px; text-align: center; }
+    .back h3 { color: #F5A623; font-size: 22px; margin-bottom: 10px; }
+    .back p { color: #fff; opacity: .9; font-size: 14px; line-height: 1.5; }
+
+    .more { margin: 36px auto 0; display: block; padding: 14px 44px; border-radius: 999px; border: 0; background: #F5A623; color: #2C1810; font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: transform .15s, background .2s; }
+    .more:hover { background: #e39915; transform: translateY(-1px); }
+
+    /* Модалка */
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal.open { display: flex; }
+    .sheet { width: min(900px, 100%); background: #2C1810; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+    .sheet-head { background: #F5A623; padding: 18px 56px 18px 24px; position: relative; }
+    .sheet-head h2 { margin: 0; color: #2C1810; letter-spacing: 2px; }
+    .close { position: absolute; right: 14px; top: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: transparent; color: #2C1810; font-size: 28px; cursor: pointer; }
+    .sheet-body { display: grid; grid-template-columns: 320px 1fr; gap: 24px; padding: 22px; align-items: start; }
+    .shot { border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,.35); }
+    .shot img { display: block; width: 100%; height: auto; }
+    .shot small { display: block; background: #F5A623; color: #2C1810; padding: 8px 12px; font-weight: 700; text-align: center; }
+    .desc { color: #fff; opacity: .95; line-height: 1.7; font-size: 15px; }
+    .price { margin-top: 16px; font-size: 22px; font-weight: 800; color: #F5A623; }
+    .phone { margin-top: 10px; font-size: 18px; }
+    .phone::before { content: "📞 "; }
+
+    @media (max-width: 720px) {
+      .sheet-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="title">ПОПУЛЯРНО</h1>
+
+    <div class="grid">
+      <!-- 1 -->
+      <div class="hex">
+        <div class="card" data-modal="m1">
+          <div class="face front">
+            <span class="label">ЕЖЕВИКА</span>
+            <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=800&q=80" alt="Ежевика"/>
+          </div>
+          <div class="face back">
+            <div>
+              <h3>Ежевика</h3>
+              <p>Свежая лесная ежевика, богата витаминами и минералами.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="hex">
+        <div class="card" data-modal="m2">
+          <div class="face front">
+            <span class="label">ЕЖЕВИКА</span>
+            <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=800&q=80" alt="Ягоды"/>
+          </div>
+          <div class="face back">
+            <div>
+              <h3>Ягоды</h3>
+              <p>Отборные лесные ягоды для вашего стола.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="hex">
+        <div class="card" data-modal="m3">
+          <div class="face front">
+            <span class="label">ЕЖЕВИКА</span>
+            <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=800&q=80" alt="Малина"/>
+          </div>
+          <div class="face back">
+            <div>
+              <h3>Малина</h3>
+              <p>Сочная сладкая малина прямо с поля.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="hex">
+        <div class="card" data-modal="m4">
+          <div class="face front">
+            <span class="label">ЕЖЕВИКА</span>
+            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784422?w=800&q=80" alt="Мёд"/>
+          </div>
+          <div class="face back">
+            <div>
+              <h3>Мёд</h3>
+              <p>Натуральный ароматный мёд от местных пасек.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="hex">
+        <div class="card" data-modal="m5">
+          <div class="face front">
+            <span class="label">ЕЖЕВИКА</span>
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80" alt="Черника"/>
+          </div>
+          <div class="face back">
+            <div>
+              <h3>Черника</h3>
+              <p>Полезная черника для зрения и иммунитета.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="more">БОЛЬШЕ</button>
+  </div>
+
+  <!-- MODALS -->
+  <div id="m1" class="modal" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="m1-title">МАЛИНА</h2><button class="close" data-close>&times;</button></div>
+      <div class="sheet-body">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?w=1000&q=80" alt="Малина"/><small>Ягоды, богатые витаминами и минералами</small></div>
+        <div>
+          <p class="desc">Бла бла бла бла бла бла бла бла бла бла бла бла бла бла бла. Полезные свойства, вкус и аромат, сезонные сборы и рекомендации по хранению.</p>
+          <div class="price">449₽</div>
+          <div class="phone">+7 992 928 18 29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="m2" class="modal" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="m2-title">ЯГОДЫ</h2><button class="close" data-close>&times;</button></div>
+      <div class="sheet-body">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=1000&q=80" alt="Ягоды"/><small>Свежие и сочные ягоды</small></div>
+        <div>
+          <p class="desc">Короткое описание ассортимента ягод, их вкусовые качества и польза.</p>
+          <div class="price">от 299₽</div>
+          <div class="phone">+7 992 928 18 29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="m3" class="modal" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="m3-title">МАЛИНА</h2><button class="close" data-close>&times;</button></div>
+      <div class="sheet-body">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=1000&q=80" alt="Малина"/><small>Ароматная и сладкая</small></div>
+        <div>
+          <p class="desc">Описание малины, рекомендации к подаче и хранению.</p>
+          <div class="price">399₽</div>
+          <div class="phone">+7 992 928 18 29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="m4" class="modal" role="dialog" aria-modal="true" aria-labelledby="m4-title">
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="m4-title">МЁД</h2><button class="close" data-close>&times;</button></div>
+      <div class="sheet-body">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784422?w=1000&q=80" alt="Мёд"/><small>Натуральный мёд с пасеки</small></div>
+        <div>
+          <p class="desc">Цветочный мёд, густой и ароматный. Отлично подходит к чаю и выпечке.</p>
+          <div class="price">549₽</div>
+          <div class="phone">+7 992 928 18 29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="m5" class="modal" role="dialog" aria-modal="true" aria-labelledby="m5-title">
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="m5-title">ЧЕРНИКА</h2><button class="close" data-close>&times;</button></div>
+      <div class="sheet-body">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1000&q=80" alt="Черника"/><small>Польза для зрения</small></div>
+        <div>
+          <p class="desc">Черника богата антиоксидантами, поддерживает иммунитет и зрение.</p>
+          <div class="price">359₽</div>
+          <div class="phone">+7 992 928 18 29</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Открытие модалки по клику на карточку
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.getAttribute('data-modal');
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.add('open');
+      });
+    });
+
+    // Закрытие
+    document.querySelectorAll('.modal').forEach(m => {
+      m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('open'); });
+    });
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', (e) => { e.target.closest('.modal').classList.remove('open'); });
+    });
+
+    // ESC
+    window.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>

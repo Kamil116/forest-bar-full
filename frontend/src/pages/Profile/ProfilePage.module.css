@@ -1,0 +1,97 @@
+.profilePage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mainContent {
+    background: rgba(52, 33, 41, 1);
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.contentContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.logoutButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logoutButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.treeIllustration {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.25rem 0;
+    flex-shrink: 1;
+    min-height: 0;
+    max-height: 90px;
+}
+
+.explanationBox {
+    background: rgba(180, 110, 5, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.inputField {
+    background: rgba(52, 33, 41, 1);
+    border-radius: 10px;
+    padding: 8px 12px;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inputField:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.changeLabel {
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.changeLabel:hover {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+    .accountPanel {
+        max-width: 100%;
+    }
+    
+    .treeIllustration {
+        margin: 1rem 0;
+    }
+}
+

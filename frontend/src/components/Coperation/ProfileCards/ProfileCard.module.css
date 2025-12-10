@@ -1,0 +1,13 @@
+/* CSS Variables for ProfileCard font sizes */
+:root {
+    --profile-card-text-font-size: clamp(14px, 2vw, 26px);
+}
+
+.profileCardText {
+    font-size: var(--profile-card-text-font-size);
+}
+
+.profileCardButton {
+    font-size: var(--profile-card-text-font-size);
+}
+

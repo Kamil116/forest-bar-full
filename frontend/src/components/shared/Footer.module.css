@@ -1,0 +1,34 @@
+/* CSS Variables for footer font sizes */
+:root {
+    --footer-text-font-size: clamp(6px, 1.5vw, 24px);
+}
+
+.footerText {
+    font-size: var(--footer-text-font-size);
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.31);
+    text-align: center;
+}
+
+
+/* Hide less essential items on mobile */
+.hideOnMobile {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .footerText {
+        text-align: left;
+    }
+
+    .hideOnMobile {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --footer-text-font-size: clamp(6px, 2.5vw, 24px);
+    }
+}
+

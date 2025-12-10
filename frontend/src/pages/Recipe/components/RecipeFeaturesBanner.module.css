@@ -1,0 +1,86 @@
+.bannerContainer {
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+    padding-bottom: clamp(1.5rem, 4vw, 3rem);
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+    min-height: clamp(400px, 50vh, 600px);
+}
+
+.hexagonsLayout {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: clamp(1rem, 3vw, 2rem) 0;
+    margin-top: clamp(1rem, 2vw, 1.5rem);
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hexagonColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(10px, 2vw, 20px);
+    flex: 1;
+    max-width: fit-content;
+}
+
+.hexagonWrapper {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hexagonWrapper:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.hexagonWithImage {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hexagonGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    box-shadow: 0 0 15px rgba(247, 187, 26, 0.5);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.contentWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.contentStack {
+    position: relative;
+    z-index: 2;
+}
+
+.backgroundWrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-top: clamp(1rem, 2vw, 2rem);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hexagonsLayout {
+        padding: clamp(0.5rem, 2vw, 1rem) 0;
+    }
+    
+    .hexagonColumn {
+        gap: clamp(8px, 1.5vw, 15px);
+    }
+}
+
