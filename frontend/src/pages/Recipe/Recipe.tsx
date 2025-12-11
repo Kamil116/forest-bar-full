@@ -55,7 +55,7 @@ export default function Recipe() {
                         onNext={handleNext}
                         backgroundComponent={
                             (currentRecipe.subTitle.toLowerCase().includes('мёд') || currentRecipe.subTitle.toLowerCase().includes('мед')) 
-                                ? <RecipeBannerBackground imageUrl={`${import.meta.env.BASE_URL}/images/honey-bg.png`} />
+                                ? <RecipeBannerBackground imageUrl={`/images/honey-bg.png`} />
                                 : undefined
                         }
                         features={currentRecipe.features}

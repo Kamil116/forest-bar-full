@@ -6,7 +6,7 @@ interface BackgroundHexagonGridsProps {
 }
 
 export function BackgroundHexagonGrids({ 
-    imageUrl = `${import.meta.env.BASE_URL}/images/honey-bg.png` 
+    imageUrl = `/images/honey-bg.png` 
 }: BackgroundHexagonGridsProps = {}) {
     return (
         <Box 

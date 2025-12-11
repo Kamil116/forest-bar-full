@@ -28,7 +28,7 @@ function ProfileCard({ leaderProfile }: { leaderProfile: Vendor }) {
             <Stack align="center" gap="xl">
                 <Stack gap={0}>
                     <Image
-                        src={`${import.meta.env.BASE_URL}/images/home-bg.jpg`}
+                        src={`/images/home-bg.jpg`}
                         alt="Profile"
                         h={{ base: 100, sm: 120, md: 140, lg: 160 }}
                         radius="xl"

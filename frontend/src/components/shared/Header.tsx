@@ -150,7 +150,7 @@ function Header() {
                     </Button>
                     <Box className={classes.logoWrapper}>
                         <Image
-                            src={`${import.meta.env.BASE_URL}/images/logo.svg`}
+                            src={`/images/logo.svg`}
                             className={classes.logoDesktop}
                             onClick={() => navigate('/')}
                         />
@@ -216,7 +216,7 @@ function Header() {
                     />
                     <Box className={classes.logoWrapper} style={{ width: 'clamp(50px, 6vw, 80px)' }}>
                         <Image
-                            src={`${import.meta.env.BASE_URL}/images/logo.svg`}
+                            src={`/images/logo.svg`}
                             className={classes.logoMobile}
                             onClick={() => navigate('/')}
                         />

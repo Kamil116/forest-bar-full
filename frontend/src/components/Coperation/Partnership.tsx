@@ -89,7 +89,7 @@ function Partnership() {
                 </Box>
 
                 <Image
-                    src={`${import.meta.env.BASE_URL}/images/dawd.png`}
+                    src={`/images/dawd.png`}
                     alt="Partnership"
                     className={styles.image}
                     fit="cover"

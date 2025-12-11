@@ -129,7 +129,7 @@ function VacancyCard({ job }: { job: Vacancy }) {
                         <Group justify="space-between" align="flex-start" wrap="wrap" gap="md">
                             <Group gap="md" wrap="wrap" style={{ flex: 1, minWidth: 0 }}>
                                 <Image
-                                    src={`${import.meta.env.BASE_URL}/images/beehive.svg`}
+                                    src={`/images/beehive.svg`}
                                     alt="Beehive icon"
                                     w={{ base: 40, md: 60 }}
                                     h={{ base: 40, md: 60 }}

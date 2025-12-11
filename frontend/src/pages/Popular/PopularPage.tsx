@@ -66,7 +66,7 @@ export default function PopularPage() {
                 {/* Header with group_6.png - Outside Container for full width */}
                 <Box className={classes.headerSection}>
                     <Image
-                        src={`${import.meta.env.BASE_URL}/images/group_6.png`}
+                        src={`/images/group_6.png`}
                         alt="Header decoration"
                         className={classes.headerImage}
                     />

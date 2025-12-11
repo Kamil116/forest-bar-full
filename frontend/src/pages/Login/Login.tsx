@@ -38,7 +38,7 @@ function Login() {
     return (
         <Box
             h="100vh"
-            bg={`url(${import.meta.env.BASE_URL}/images/auth-bg.jpg) center/cover no-repeat`}
+            bg={`url(/images/auth-bg.jpg) center/cover no-repeat`}
         >
             <Stack
                 h="100%"

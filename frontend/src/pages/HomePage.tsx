@@ -9,7 +9,7 @@ export function HomePage() {
     return (
         <Box
             h="100vh"
-            bg={`url(${import.meta.env.BASE_URL}/images/home-bg.jpg) center/cover no-repeat`}
+            bg={`url(/images/home-bg.jpg) center/cover no-repeat`}
         >
             <Stack
                 h="100%"
