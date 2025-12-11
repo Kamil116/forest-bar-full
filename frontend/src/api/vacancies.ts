@@ -1,9 +1,10 @@
 import { VacancySchema, type Vacancy } from '@/schemas/vacancy';
 import z from 'zod';
+import { API_BASE_URL } from '@/config/api';
 
 export async function fetchVacancy(): Promise<Vacancy[]> {
     try {
-        const response = await fetch('http://localhost:8000/vacancies');
+        const response = await fetch(`${API_BASE_URL}/vacancies`);
         if (!response.ok) {
             throw new Error('Не удалось получить вакансии');
         }

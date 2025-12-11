@@ -1,10 +1,11 @@
 import { Product } from '@/types/product';
 import * as z from 'zod';
 import { ProductSchema } from '@/schemas/product';
+import { API_BASE_URL } from '@/config/api';
 
 export async function fetchProducts(): Promise<Product[]> {
     try {
-        const response = await fetch('http://localhost:8000/products');
+        const response = await fetch(`${API_BASE_URL}/products`);
         if (!response.ok) {
             throw new Error('Не удалось получить товары');
         }
